@@ -12,4 +12,13 @@ const extractCurrencyList = (currencyList, rates) => {
   }, {});
 };
 
-module.exports = extractCurrencyList;
+const getFormattedToday = () => {
+  const now = new Date();
+  const _month = now.getMonth()
+  return `${now.getFullYear()}-${_month + 1}-${now.getDate()}`;
+}
+
+module.exports = {
+  extractCurrencyList,
+  getFormattedToday,
+};
