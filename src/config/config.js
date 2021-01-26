@@ -7,7 +7,8 @@ dotenv.config({ path: path.join(__dirname, '../../.env') });
 const envVarsSchema = Joi.object()
   .keys({
     NODE_ENV: Joi.string().valid('production', 'development', 'test').required(),
-    PORT: Joi.number().default(3000)
+    PORT: Joi.number().default(3000),
+    EXCHANGE_URI: Joi.string().default('https://api.exchangeratesapi.io/latest'),
   })
   .unknown();
 
@@ -19,5 +20,6 @@ if (error) {
 
 module.exports = {
   env: envVars.NODE_ENV,
-  port: envVars.PORT
+  port: envVars.PORT,
+  exchange_uri: envVars.EXCHANGE_URI,
 };
