@@ -6,7 +6,8 @@
   "author": "Shegx01 <shegx01@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=12.0.0",
+    "yarn": ">=1.22.5"
   },
   "scripts": {
     "start": "pm2 start ecosystem.config.json --no-daemon",
